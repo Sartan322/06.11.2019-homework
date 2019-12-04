@@ -13,9 +13,9 @@ public class UserRepositoryImpl implements UserRepository {
     private final String SQL_SELECT_LOG_AND_PASS = "SELECT login, password FROM users WHERE login = ? AND password = ?";
     private final String SQL_DELETE_USER = "DELETE FROM users WHERE login = ? AND password = ?;";
     private final String SQL_UPDATE_USER = "UPDATE users SET name = ?, self_name = ?, self_information = ? WHERE login = ? AND password = ?";
-    private final String SQL_SELECT_CITY = "SELECT city_name FROM citys WHERE city_id = ?";
-    private final String SQL_SELECT_URL = "SELECT avatar_url FROM avatar_urls  WHERE avatar_name = ?";
-    private final String SQL_SELECT_USER = "SELECT * FROM user WHERE login = ? AND passwrod = ?";
+   /* private final String SQL_SELECT_CITY = "SELECT city_name FROM citys WHERE city_id = ?";
+    private final String SQL_SELECT_URL = "SELECT avatar_url FROM avatar_urls  WHERE avatar_name = ?";*/
+    private final String SQL_SELECT_USER = "SELECT * FROM users WHERE login = ? AND password = ?";
 
 
     public UserRepositoryImpl(Connection connection) {
@@ -57,8 +57,9 @@ public class UserRepositoryImpl implements UserRepository {
         return false;
     }
 
-    @Override
+   /* @Override
     public String findCity(String id)    {
+        System.out.println(id);
         String result = null;
         try {
             PreparedStatement statement = connection.prepareStatement(SQL_SELECT_CITY);
@@ -85,7 +86,7 @@ public class UserRepositoryImpl implements UserRepository {
             e.printStackTrace();
         }
         return result;
-    }
+    }*/
 
     @Override
     public void save(User model) {

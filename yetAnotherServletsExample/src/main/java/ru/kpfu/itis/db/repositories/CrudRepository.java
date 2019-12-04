@@ -10,9 +10,10 @@ public interface CrudRepository<T, ID> {
     Optional<T> find(String login, String password);
     Optional<T> find(ID id);
     boolean checkValidation(String login, String password);
-
+/*
     String findCity(String id);
     String findUrl(String name);
+*/
 
     List<T> findAll();
 }

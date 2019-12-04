@@ -20,5 +20,9 @@
     <br>
     <p>${information}</p>
 </form>
+<form method="post">
+    <input type="submit" name="button" value="Delete">
+    <input type="submit" name="button" value="Edit">
+</form>
 </body>
 </html>
